@@ -1,5 +1,5 @@
 param (
-    [string]$serverIP = "127.0.0.1",
+    [string]$serverIP = "192.168.1.100", # Změňte na veřejnou IP adresu serveru nebo jeho doménové jméno
     [int]$serverPort = 5555
 )
 
@@ -19,7 +19,7 @@ function SendMessage {
 
 function ReceiveMessage {
     $data = $reader.ReadLine()
-    Write-Host ". $data"
+    Write-Host "Server says: $data"
 }
 
 # Example usage
@@ -39,4 +39,3 @@ while ($true) {
 }
 
 $client.Close()
-
